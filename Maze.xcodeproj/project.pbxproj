@@ -24,6 +24,9 @@
 		73976DD2179DDDF70037A3FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73976DAD179DDDF70037A3FC /* UIKit.framework */; };
 		73976DDA179DDDF70037A3FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73976DD8179DDDF70037A3FC /* InfoPlist.strings */; };
 		73976DDC179DDDF70037A3FC /* MazeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73976DDB179DDDF70037A3FC /* MazeTests.m */; };
+		73976DEF179DE3BB0037A3FC /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 73976DEE179DE3B80037A3FC /* player.png */; };
+		73976DF2179DE5D70037A3FC /* horizontalMazeWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 73976DF0179DE5D70037A3FC /* horizontalMazeWall.png */; };
+		73976DF3179DE5D70037A3FC /* verticalMazeWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 73976DF1179DE5D70037A3FC /* verticalMazeWall.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		73976DD7179DDDF70037A3FC /* MazeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MazeTests-Info.plist"; sourceTree = "<group>"; };
 		73976DD9179DDDF70037A3FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73976DDB179DDDF70037A3FC /* MazeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MazeTests.m; sourceTree = "<group>"; };
+		73976DEE179DE3B80037A3FC /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
+		73976DF0179DE5D70037A3FC /* horizontalMazeWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontalMazeWall.png; sourceTree = "<group>"; };
+		73976DF1179DE5D70037A3FC /* verticalMazeWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verticalMazeWall.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,9 @@
 		73976DB1179DDDF70037A3FC /* Maze */ = {
 			isa = PBXGroup;
 			children = (
+				73976DF0179DE5D70037A3FC /* horizontalMazeWall.png */,
+				73976DF1179DE5D70037A3FC /* verticalMazeWall.png */,
+				73976DEE179DE3B80037A3FC /* player.png */,
 				73976DBA179DDDF70037A3FC /* IMAAppDelegate.h */,
 				73976DBB179DDDF70037A3FC /* IMAAppDelegate.m */,
 				73976DBD179DDDF70037A3FC /* Main.storyboard */,
@@ -242,8 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73976DB6179DDDF70037A3FC /* InfoPlist.strings in Resources */,
+				73976DEF179DE3BB0037A3FC /* player.png in Resources */,
 				73976DC9179DDDF70037A3FC /* Images.xcassets in Resources */,
+				73976DF3179DE5D70037A3FC /* verticalMazeWall.png in Resources */,
 				73976DC7179DDDF70037A3FC /* Spaceship.png in Resources */,
+				73976DF2179DE5D70037A3FC /* horizontalMazeWall.png in Resources */,
 				73976DBF179DDDF70037A3FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
