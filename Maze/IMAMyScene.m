@@ -11,7 +11,7 @@
 SKSpriteNode *playerSprite;
 SKSpriteNode *vw1;
 SKSpriteNode *hw1;
-static const uint32_t playerCategory =   0;
+static const uint32_t playerCategory =   0x1 << 0;
 static const uint32_t wallCategory =  0x1 << 1;
 
 @implementation IMAMyScene
