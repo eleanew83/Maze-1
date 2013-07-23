@@ -27,6 +27,7 @@
 		73976DEF179DE3BB0037A3FC /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = 73976DEE179DE3B80037A3FC /* player.png */; };
 		73976DF2179DE5D70037A3FC /* horizontalMazeWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 73976DF0179DE5D70037A3FC /* horizontalMazeWall.png */; };
 		73976DF3179DE5D70037A3FC /* verticalMazeWall.png in Resources */ = {isa = PBXBuildFile; fileRef = 73976DF1179DE5D70037A3FC /* verticalMazeWall.png */; };
+		73976DF9179DFD080037A3FC /* mazeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 73976DF8179DFD010037A3FC /* mazeImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		73976DEE179DE3B80037A3FC /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		73976DF0179DE5D70037A3FC /* horizontalMazeWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = horizontalMazeWall.png; sourceTree = "<group>"; };
 		73976DF1179DE5D70037A3FC /* verticalMazeWall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = verticalMazeWall.png; sourceTree = "<group>"; };
+		73976DF8179DFD010037A3FC /* mazeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mazeImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		73976DB1179DDDF70037A3FC /* Maze */ = {
 			isa = PBXGroup;
 			children = (
+				73976DF8179DFD010037A3FC /* mazeImage.png */,
 				73976DF0179DE5D70037A3FC /* horizontalMazeWall.png */,
 				73976DF1179DE5D70037A3FC /* verticalMazeWall.png */,
 				73976DEE179DE3B80037A3FC /* player.png */,
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73976DF9179DFD080037A3FC /* mazeImage.png in Resources */,
 				73976DB6179DDDF70037A3FC /* InfoPlist.strings in Resources */,
 				73976DEF179DE3BB0037A3FC /* player.png in Resources */,
 				73976DC9179DDDF70037A3FC /* Images.xcassets in Resources */,

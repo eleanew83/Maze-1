@@ -8,40 +8,98 @@
 
 #import "IMAMyScene.h"
 
+SKSpriteNode *playerSprite;
+SKSpriteNode *vw1;
+SKSpriteNode *hw1;
+static const uint32_t playerCategory =  0x1 << 0;
+static const uint32_t wallCategory =  0x1 << 1;
+
 @implementation IMAMyScene
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-       /* self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel]; */
+        self.physicsWorld.gravity = CGPointMake(0,0);
+        self.physicsWorld.contactDelegate = self;
         
         self.backgroundColor = [SKColor whiteColor];
         
-        SKSpriteNode *playerSprite = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
-        
+    
+        playerSprite = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
         playerSprite.size = CGSizeMake(20,20);
-        
         playerSprite.position = CGPointMake(CGRectGetMinX(self.frame),
                                             CGRectGetMidY(self.frame));
+        playerSprite.physicsBody.dynamic = NO;
+        
+        playerSprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:playerSprite.size.width * 0.5];
+        playerSprite.physicsBody.usesPreciseCollisionDetection = YES;
+        playerSprite.physicsBody.categoryBitMask = playerCategory;
+        playerSprite.physicsBody.contactTestBitMask = wallCategory;
         
         
+        vw1 = [SKSpriteNode spriteNodeWithImageNamed:@"verticalMazeWall"];
+        vw1.size = CGSizeMake(5, 120);
+        vw1.position = CGPointMake(CGRectGetMinX(self.frame)+40, CGRectGetMidY(self.frame)+30);
+        vw1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:vw1.size];
+        vw1.physicsBody.dynamic = NO;
+        vw1.physicsBody.categoryBitMask = wallCategory;
+        vw1.physicsBody.contactTestBitMask = playerCategory;
         
+        
+        hw1 = [SKSpriteNode spriteNodeWithImageNamed:@"horizontalMazeWall"];
+        hw1.size = CGSizeMake(120,5);
+        hw1.position = CGPointMake(CGRectGetMidX(self.frame)-60, CGRectGetMidY(self.frame)-30);
+        hw1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:hw1.size];
+        hw1.physicsBody.dynamic = NO;
+        hw1.physicsBody.categoryBitMask = wallCategory;
+        hw1.physicsBody.contactTestBitMask = playerCategory;
+        
+        
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        [self addChild:vw1];
+        [self addChild:hw1];
         [self addChild:playerSprite];
     }
     return self;
 }
 
+- (void)didBeginContact:(SKPhysicsContact *)contact{
+    
+    if((contact.bodyA.categoryBitMask & contact.bodyB.categoryBitMask) == 0)
+    {
+        
+        [playerSprite.physicsBody applyForce:CGPointMake(50,50)];
+    }
+    
+
+}
+
+- (void)didEndContact:(SKPhysicsContact *)contact{
+
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
+    
+    
+    for (UITouch *touch in touches) {
+
+        
+        [playerSprite.physicsBody applyForce:CGPointMake(25,25)];
+        
+        
+    }
+    
+   /* SKAction *hover = [SKAction sequence:@[
+                                           [SKAction waitForDuration:1.0],
+                                           [SKAction moveByX:100 y:50.0 duration:1.0],
+                                           [SKAction waitForDuration:1.0],
+                                           [SKAction moveByX:-100.0 y:-50 duration:1.0]]];*/
+    
+    
+    
+
     
     /*for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
@@ -59,6 +117,8 @@
         [self addChild:sprite];
     }*/
 }
+
+
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
