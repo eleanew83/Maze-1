@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28CA56BC179F075500E8ADB2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28CA56BB179F075500E8ADB2 /* Default-568h@2x.png */; };
 		73976DAA179DDDF70037A3FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73976DA9179DDDF70037A3FC /* Foundation.framework */; };
 		73976DAC179DDDF70037A3FC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73976DAB179DDDF70037A3FC /* CoreGraphics.framework */; };
 		73976DAE179DDDF70037A3FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73976DAD179DDDF70037A3FC /* UIKit.framework */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28CA56BB179F075500E8ADB2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		73976DA6179DDDF70037A3FC /* Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73976DA9179DDDF70037A3FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		73976DAB179DDDF70037A3FC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +100,7 @@
 		73976D9D179DDDF70037A3FC = {
 			isa = PBXGroup;
 			children = (
+				28CA56BB179F075500E8ADB2 /* Default-568h@2x.png */,
 				73976DB1179DDDF70037A3FC /* Maze */,
 				73976DD5179DDDF70037A3FC /* MazeTests */,
 				73976DA8179DDDF70037A3FC /* Frameworks */,
@@ -261,6 +264,7 @@
 				73976DC7179DDDF70037A3FC /* Spaceship.png in Resources */,
 				73976DF2179DE5D70037A3FC /* horizontalMazeWall.png in Resources */,
 				73976DBF179DDDF70037A3FC /* Main.storyboard in Resources */,
+				28CA56BC179F075500E8ADB2 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +491,7 @@
 				73976DE1179DDDF70037A3FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73976DE2179DDDF70037A3FC /* Build configuration list for PBXNativeTarget "MazeTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				73976DE4179DDDF70037A3FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

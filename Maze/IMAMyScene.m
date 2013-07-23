@@ -11,7 +11,7 @@
 SKSpriteNode *playerSprite;
 SKSpriteNode *vw1;
 SKSpriteNode *hw1;
-static const uint32_t playerCategory =  0x1 << 0;
+static const uint32_t playerCategory =   0;
 static const uint32_t wallCategory =  0x1 << 1;
 
 @implementation IMAMyScene
@@ -22,14 +22,18 @@ static const uint32_t wallCategory =  0x1 << 1;
         
         self.physicsWorld.gravity = CGPointMake(0,0);
         self.physicsWorld.contactDelegate = self;
+
         
         self.backgroundColor = [SKColor whiteColor];
         
-    
+        CGRect visualFrame = CGRectZero;
+        CGRect frame = self.frame;
+        visualFrame.size.width = MAX(frame.size.width, frame.size.height);
+        visualFrame.size.height = MIN(frame.size.width, frame.size.height);
         playerSprite = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
         playerSprite.size = CGSizeMake(20,20);
-        playerSprite.position = CGPointMake(CGRectGetMinX(self.frame),
-                                            CGRectGetMidY(self.frame));
+        playerSprite.position = CGPointMake(CGRectGetMidX(visualFrame),
+                                            CGRectGetMidY(visualFrame));
         playerSprite.physicsBody.dynamic = NO;
         
         playerSprite.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:playerSprite.size.width * 0.5];
@@ -85,8 +89,11 @@ static const uint32_t wallCategory =  0x1 << 1;
     
     for (UITouch *touch in touches) {
 
+        CGPoint location = [touch locationInNode:self];
+        CGPoint vector = CGPointMake(location.x-playerSprite.position.x, location.y-playerSprite.position.y);
+        [playerSprite.physicsBody applyForce:vector];
         
-        [playerSprite.physicsBody applyForce:CGPointMake(25,25)];
+        //[playerSprite.physicsBody applyForce:CGPointMake(25,25)];
         
         
     }
@@ -122,6 +129,11 @@ static const uint32_t wallCategory =  0x1 << 1;
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+- (void)setSize:(CGSize)size {
+    [super setSize:size];
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
 }
 
 @end
