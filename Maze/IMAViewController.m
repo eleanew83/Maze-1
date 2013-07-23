@@ -25,6 +25,7 @@
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
+    //change
     [skView presentScene:scene];
 }
 
